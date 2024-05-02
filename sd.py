@@ -55,6 +55,7 @@ def runrep(url,payload):
   time.sleep(1)
   chun=requests.get(url)
   while chun.json()['status'] != 'succeeded':
+    time.sleep(3)
     chun=requests.get(url)
 
     print(chun.json()['status'])
