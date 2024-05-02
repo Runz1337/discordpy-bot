@@ -69,6 +69,7 @@ def getres(prompt):
   time.sleep(1)
   chun=httpx.get(chunks)
   while chun.json()['status'] != 'succeeded':
+    time.sleep(2)
     chun=httpx.get(chunks)
     
     print(chun.json()['status'])
