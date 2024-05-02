@@ -49,6 +49,8 @@ async def on_message(message):
         if "write a code" in message.content or "generate a code" in message.content or "code " in message.content:
           return await message.channel.send("Sorry I can't help you with coding.Consult stacksoverflow.")
         if bot.user in message.mentions:
+          if message.author.id not in [750015265135263835,887973552958087168]:
+              return
           result=getres(message.content.replace('<@897389679844917268>',' '))
         
           con=Con(message,bot)
